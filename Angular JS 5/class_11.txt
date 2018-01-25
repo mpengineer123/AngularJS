@@ -1,0 +1,26 @@
+array data
+
+  products: any[]=[
+  
+    {pid:1,pname:'Samsung',prpice:5000,pimage:'/assets/databasebox2boxeslarge.png'},
+    {pid:2,pname:'Nokia',prpice:5000,pimage:'/assets/databasebox2boxeslarge.png'},
+    {pid:3,pname:'Micromax',prpice:5000,pimage:'/assets/databasebox2boxeslarge.png'}
+    ];
+  
+  
+  ];
+
+
+
+*ngFor="let p of products
+
+
+share folder
+
+
+
+read it!!
+
+1. difference between ngOnInit and Constructor
+2. multiple array filter
+3. angular hero component
