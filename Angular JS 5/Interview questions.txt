@@ -285,3 +285,22 @@ Ans: Through EventEmitter() we can assign/create an Event in child component whi
 
 64. What is emit()?
 Ans: We can emit/raise the EventEmitter() for sending data from child to component.
+
+65. What is the difference between ngOnInit and Constructor?
+Ans: 
+
+66. How do you define array in Angular js 5?
+Ans: employees:any[] = [
+     {id:1,name:'Manas'},
+     {id:2,name:'Ashish'},
+     {id:3,name:'Ramesh'},
+     ]
+67. How do you access the above array?
+Ans: <div *ngFor="{let employee of employees}">
+          <div>Emp {{employee.id}}. {{employee.name}}</div>
+     </div>
+
+68. Describe about the angular hero?
+
+69. 
+
