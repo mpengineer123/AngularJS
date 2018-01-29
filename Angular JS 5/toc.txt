@@ -10,7 +10,7 @@ TABLE OF CONTENTS
 9. Event Binding ---- (click)="Demo()", (click)="Demo($event)" (click)="Demo='Welcome Manas!!'" ,  --- (TEMPLATE TO CLASS)
 10. Template Reference Variable ---- <input type="text" #myInput /> with <button (click)="Demo(myInput.value)">Login</button>
 11. Two Way Data Binding ---- combination of property binding and event binding means the data flow from template to class i.e. [] and class to      template i.e (). The synax is [(ngModel)]="Name" is called Banana.
-12. ngIf Directive ---- add/remove html elements from dom --- *ngIf="false", *ngIf="true">, *ngIf="show", *ngIf="show;then thenBlock;else elseBlock", <button (click)="saveChange()">{{showHide?"Hide":"Show"}} Details</button>
+12. ngIf Directive ---- add/remove html elements from dom --- *ngIf="false", *ngIf="true">, *ngIf="show", *ngIf="show;then thenBlock;else  elseBlock", <button (click)="saveChange()">{{showHide?"Hide":"Show"}} Details</button>
 13. ngSwitch Directive ---- tested the multiple case statements as in other programming languages.
      syntax: [ngSwitch]="favColor" with *ngSwitchCase="case_1", *ngSwitchCase="case_2", *ngSwitchCase="case_3",  *ngSwitchDefault
 14. ngFor Directive ---- accessing list of html elements
@@ -21,7 +21,9 @@ TABLE OF CONTENTS
     4. *ngFor="let player of players;last as l" binding with last list true {{l}} {{player}} --- last player list true/other false
     5. *ngFor="let player of players;odd as o" binding with old list true {{o}} {{player}} --- odd player list true/other false
     6. *ngFor="let player of players;even as e" binding with even list true {{e}} {{player}} --- even player list true/other false
-
+15. @Input/@Output
+16. Array
+17. 
 Reference
 https://codecraft.tv/courses/angular/built-in-directives/ngstyle-and-ngclass/
 
