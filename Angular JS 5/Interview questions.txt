@@ -135,6 +135,7 @@ Ans: When interpolation fail to bind the no string data then we can use property
      export class testComponent{
      public isDisabled = 'false';
      }
+     
 34. What is webpacks?
 Ans: Mainly bundle your scripts, images, styles, assets. [https://webpack.js.org/]
      In short Webpack is a module bundler. It takes in a bunch of assets (ie. source, images, markup, CSS, ...) and turns
@@ -142,7 +143,7 @@ Ans: Mainly bundle your scripts, images, styles, assets. [https://webpack.js.org
      the moment...
 
 35. What is difference between html attributes and dom property?
-Ans: 
+Ans: html attribute are initialize the value and the attribute value cannot be changed, but dom property denotes the current value and this value can be changed
 
 36. Find some differences between  HTML attribute and DOM property?
 Ans: 
@@ -154,6 +155,8 @@ Ans:
      f. The HTML attribute value contains initial value where as DOM property value contains current value.
 
 37. What is @input and @output?
+Ans: @Input decorator is used to send data from parent to child.
+     @Output component is used to send data from child to parent.
 
 38. What is attribute binding?
 
@@ -207,6 +210,7 @@ Ans: Event binding is also one way data binding but its flow is from template to
      1. (click)="Demo()"    ---- external calling
      2. (click)="Demo($event)" ----- event listener
      3. (click)="Demo='Welcome Manas!!'"  ---- internal calling
+
 47. What is template reference variable? And which characcter is used for this?
 Ans: This is like a reference call out type of work. We can refer out input through event handler and get the value by passing same          reference in class. # characcter is used for template reference variable.
      <input type="text" #myInput /> with <button (click)="Demo(myInput.value)">Login</button>
@@ -217,7 +221,7 @@ Ans: This is actually combination of property binding and event binding means th
 49. What is the resolution of "template parse error" when we perform two way data binding?
 Ans: Attach FormsMudule to app.mudule.ts and also attach it to import array 
 
-50. What is structural directive?
+50. What are the structural directives?
 Ans: The structural directive are add or remove html elements from dom. There are three types of structural directives in angular js 5.
      1. ngIf
      2. ngSwitch
@@ -261,7 +265,7 @@ Ans: By this point you should be able to create your own custom component as wel
      But you might be surprised to hear that you’ve already created a custom directive. That’s because Components are Directives.
      
 57. What is template driven form?
-Ans: Form validation
+Ans: 
 
 58. What is model driven form?
 Ans: 
@@ -278,7 +282,7 @@ Ans: When we send data from parent component to child component we need tu use @
   
      
 62. What is @Output or custom event? How do you build this?
-Ans: When we send data from child component to parent component we need tu use @output decorator.
+Ans: When we send data from child component to parent component we need tu use @Uutput decorator.
 
 63. What is EventEmitter()?
 Ans: Through EventEmitter() we can assign/create an Event in child component which we can referred to the parent component.
@@ -295,6 +299,7 @@ Ans: employees:any[] = [
      {id:2,name:'Ashish'},
      {id:3,name:'Ramesh'},
      ]
+     
 67. How do you access the above array?
 Ans: <div *ngFor="{let employee of employees}">
           <div>Emp {{employee.id}}. {{employee.name}}</div>
@@ -302,5 +307,84 @@ Ans: <div *ngFor="{let employee of employees}">
 
 68. Describe about the angular hero?
 
-69. 
+69. How can you filter data from array? Use above arrow.
+Ans: Search(value){
+     if(this.value==''){
+     this.employess = [
+     {id:1,name:'Manas'},
+     {id:2,name:'Ashish'},
+     {id:3,name:'Ramesh'},
+     ];
+     }
+     else{
+     this.employees = this.employees.filter(ex=>ex.name.startsWith(value));
+     }
+     }
+     
+70. What is pipe?
+Ans: Pipe is the process to show your data in different transformations.
 
+72. Write down the different types of pipes?
+Ans: import {Component} from "@angular/core";
+
+
+     @Component({
+         selector : "pip",
+         template: `<div>Pipes examples</div><br>
+         String Pipes : <br>
+         1. uppercase = {{name | uppercase}}<br>
+         2. loercase = {{name | lowercase}}<br>
+         3. slice = {{name | slice : '3'}} <br>
+         4. slice = {{name | slice : '3' : '5'}} <br>
+
+         <h2>decimal Pipe </h2>
+         {{salary | number:'1.2'}}<br>
+         {{salary | number:'3.2'}}<br>
+         {{salary | number:'3.2-2'}}<br>
+
+         <h2>Date pipe </h2>
+          {{da}}<br>
+          {{da | date: 'fullDate'}}<br>
+          {{da | date: 'shortDate'}}<br>
+          {{da | date: 'fullDate'}}<br>
+          {{da | date: 'dd/MM/yy'}}<br>
+
+
+          <h2>Currency pipe </h2>
+           {{salary | currency:'â‚¹'}}<br>
+           {{salary | currency:'USD'}}<br>
+           {{salary | currency:'USD':false}}<br>
+           {{salary | currency:'CAD':'symbol-narrow'}}<br>
+           {{salary | currency:'CAD':'code'}}<br>
+
+            <h2>Json pipe </h2>
+             {{student}}<br>
+             {{student | json}}<br>
+
+           <h2>Percent pipe </h2>
+           {{salary | percent}}<br>
+
+           <h2>Custom pipe </h2>
+           {{name |trim}}
+         `
+
+     })
+
+     export class PipeComponent
+     {
+         name:string = "vijay Rana";
+         salary:number =  60.567;
+         da = new Date();
+         student:any = {name:"Vijay",Email:'vijayrana1091@gmail.com'}
+     }
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+72. What is custom pipe? Or How will you create your custom pipe?
+Ans: test.pipe.ts
+     import {Pipe,PipeTransform} from "@angular/core";
+     @Pipe({
+         name: "Vijay"
+     })
+     export class TestPipe implements PipeTransform
+     {
+     }
