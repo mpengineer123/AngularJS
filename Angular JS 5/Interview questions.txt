@@ -320,8 +320,12 @@ Ans: Search(value){
      this.employees = this.employees.filter(ex=>ex.name.startsWith(value));
      }
      }
-     
-70. What is pipe?
+
+70. What is Lambda (=>)?
+Ans: Lambda is just like argument to store the array values.
+  
+  
+71. What is pipe?
 Ans: Pipe is the process to show your data in different transformations.
 
 72. Write down the different types of pipes?
