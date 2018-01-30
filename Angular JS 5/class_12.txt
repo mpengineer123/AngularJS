@@ -1,0 +1,27 @@
+new - - ionic framework moobile app development
+
+
+
+what is View child? filter from  child - @Input
+
+
+how can you filter data from array?  {r=>r ... lambda}
+
+
+task: filter from parent to child
+
+
+
+pipes, custom pipes - show your data in transform like uppercase, lowercase, slice, etc.
+
+
+date pipe from angular official
+
+how you will create your custom pipe?
+
+1. class - import {Pipe, PipeTransform} from '@angular/core';
+2. @Pipe({name: 'xxxx'})
+3. export class TestPipe implements PipeTransfrom{}
+
+
+
