@@ -264,10 +264,91 @@ Ans: ngFor Directive ---- accessing list of html elements
 Ans: By this point you should be able to create your own custom component as well as use a set of built-in Angular directives.
      But you might be surprised to hear that you’ve already created a custom directive. That’s because Components are Directives.
      
-57. What is template driven form?
-Ans: 
+57. What is template driven form? Describe in detail.
+Ans: When we create a form in .html file this is called template driven form.
+     Steps to startup of template driven form: 
+     1. import {FormsMudule} from '@angular/forms'
+     2. use of
+          ngModel (internally replaced to ngFormControl tag to access form properties)
+          #myForm="ngForm" - ngForm (internally replaced to form tag)
+     3.   (ngSubmit)="SaveForm(myForm.value)" or <button (click)="CancelForm()">Save</button> - (ngSubmit) used for post form
 
-58. What is model driven form?
+58. Give an exaple of Template Driven Form?
+Ans: 
+     tdf.component.html
+     ----------------
+
+     <div class="container">
+         <div class="well-sm bg-primary">Class 17: Template Driven Form</div>
+         <form #myForm="ngForm" (ngSubmit)="SaveForm(myForm.value)"
+             class="form-inline">
+
+     <div ngModelGroup="fullName">
+             <div>
+                 <label>First Name: </label>
+                 <input class="form-control"
+                 type="text" name="firstName" ngModel/>
+             </div>
+
+             <div>
+                 <label>Last Name: </label>
+                 <input class="form-control"
+                 type="text" name="lastName" ngModel/>
+             </div>
+     </div>
+
+             <div>
+                 <label>Email: </label>
+                 <input class="form-control"
+                 type="text" name="Email" ngModel/>
+             </div>
+
+             <div>
+                 <label>Address: </label>
+                 <input class="form-control"
+                 type="text" name="Address" ngModel/>
+             </div>
+
+             <button class="btn btn-primary">Save</button>
+             <button class="btn btn-primary" (click)="CancelForm()">Cancel</button>
+         </form>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+
+     </div>
+
+
+
+
+
+     tdf.component.ts
+     ----------------
+     import { Component } from '@angular/core';
+
+     @Component({
+         selector:'template-driven-form',
+         templateUrl:'tdf.component.html'
+     })
+
+
+     export class tdfComponent{
+     SaveForm(value:any){
+     console.log(value.fullName.firstName);
+     console.log(value.fullName.lastName);
+     console.log(value.Email);
+     console.log(value.Address);
+         }
+     CancelForm(){
+
+     }
+
+     }
+     
+
+59. What is model driven form?
 Ans: 
 
 60. What is Component Interaction?
