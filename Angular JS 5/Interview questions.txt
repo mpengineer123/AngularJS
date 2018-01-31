@@ -347,6 +347,8 @@ Ans:
 
      }
      
+59. Write down angular assets used in template driven form?
+Ans: FormsModel, #myForm, ngForm, (ngSubmit), SaveForm(myForm.value), ngModel, ngModelGroup
 
 59. What is model driven form?
 Ans: 
