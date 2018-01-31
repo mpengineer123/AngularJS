@@ -4,7 +4,7 @@ necessary :
 
 	1. FormsMudule 
 
-	2. use of ngModel (internally replaced to ngFormControl tag), ngForm (internally replaced to form tag)
+	2. use of ngModel (internally replaced to ngFormControl tag), ngForm (internally replaced to form tag), (ngSubmit) used for post form
 
 	3. ngModelGroup
 
@@ -17,4 +17,77 @@ read: template driven from
 
 ref: throughtram.com
 
+
+
+tdf.component.html
+----------------
+
+<div class="container">
+    <div class="well-sm bg-primary">Class 17: Template Driven Form</div>
+    <form #myForm="ngForm" (ngSubmit)="SaveForm(myForm.value)"
+        class="form-inline">
+
+<div ngModelGroup="fullName">
+        <div>
+            <label>First Name: </label>
+            <input class="form-control"
+            type="text" name="firstName" ngModel/>
+        </div>
+
+        <div>
+            <label>Last Name: </label>
+            <input class="form-control"
+            type="text" name="lastName" ngModel/>
+        </div>
+</div>
+
+        <div>
+            <label>Email: </label>
+            <input class="form-control"
+            type="text" name="Email" ngModel/>
+        </div>
+
+        <div>
+            <label>Address: </label>
+            <input class="form-control"
+            type="text" name="Address" ngModel/>
+        </div>
+
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" (click)="CancelForm()">Cancel</button>
+    </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+
+
+
+
+tdf.component.ts
+----------------
+import { Component } from '@angular/core';
+
+@Component({
+    selector:'template-driven-form',
+    templateUrl:'tdf.component.html'
+})
+
+
+export class tdfComponent{
+SaveForm(value:any){
+console.log(value.fullName.firstName);
+console.log(value.fullName.lastName);
+console.log(value.Email);
+console.log(value.Address);
+    }
+CancelForm(){
+
+}
+
+}
 
