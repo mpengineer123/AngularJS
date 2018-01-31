@@ -1,0 +1,20 @@
+forms
+1. template driven (code in html)
+necessary :
+
+	1. FormsMudule 
+
+	2. use of ngModel (internally replaced to ngFormControl tag), ngForm (internally replaced to form tag)
+
+	3. ngModelGroup
+
+
+2. model driven (code in ts)
+
+
+
+read: template driven from
+
+ref: throughtram.com
+
+
