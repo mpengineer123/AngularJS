@@ -1,0 +1,22 @@
+modal driven form (ts)
+1. ReactiveFormModule - angular form
+2. FormsGroup -  angular form
+3. FormControl - form directory
+
+
+
+app.module.ts
+
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
+Form validation properties
+touch
+untouch
+valid
+dirty
+
+
+
+read: validation over model driven form
