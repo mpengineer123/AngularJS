@@ -247,7 +247,7 @@ Ans: <p>name: <input type="text" #name /></p>
      <button (click)="saveChange()">{{showHide?"Hide":"Show"}} Details</button>
 
 54. What is ngSwitch?
-Ans: ngSwitch is tested the multiple case statements as in other programming languages.
+Ans: ngSwitch is tested the multiple case statements as usual in other programming languages.
      syntax: [ngSwitch]="favColor" with *ngSwitchCase="case_1", *ngSwitchCase="case_2", *ngSwitchCase="case_3",  *ngSwitchDefault
 
 55. What is use of ngFor?
@@ -265,7 +265,7 @@ Ans: By this point you should be able to create your own custom component as wel
      But you might be surprised to hear that you’ve already created a custom directive. That’s because Components are Directives.
      
 57. What is template driven form? Describe in detail.
-Ans: When we create a form in .html file this is called template driven form.
+Ans: When we create a form in .html file this is called template driven form. This is, you can send data from component to view.
      Steps to startup of template driven form: 
      1. import {FormsMudule} from '@angular/forms'
      2. use of
@@ -273,7 +273,7 @@ Ans: When we create a form in .html file this is called template driven form.
           #myForm="ngForm" - ngForm (internally replaced to form tag)
      3.   (ngSubmit)="SaveForm(myForm.value)" or <button (click)="CancelForm()">Save</button> - (ngSubmit) used for post form
 
-58. Give an exaple of Template Driven Form?
+58. Give an example of Template Driven Form?
 Ans: 
      tdf.component.html
      ----------------
@@ -320,12 +320,8 @@ Ans:
 
      </div>
 
-
-
-
-
-     tdf.component.ts
-     ----------------
+tdf.component.ts
+----------------
      import { Component } from '@angular/core';
 
      @Component({
@@ -351,8 +347,45 @@ Ans:
 Ans: FormsModel, #myForm, ngForm, (ngSubmit), SaveForm(myForm.value), ngModel, ngModelGroup
 
 59. What is model driven form?
-Ans: 
+Ans: We create the form and form properties in typescript instead of html. This is, tow way binding means view-to-component and
+     component-to-view.
+     
+60.  What are assets and steps used for model driven form in angular js? Describes in detail.  
+Ans: Steps
+     1. import {FormGroup,FormControl} from "@angular/forms"; -- FormGroup-for form creation/assign and FormControl-creation/assign form            elements/properties in modeldriven.component.ts file
+     2. import {OnInit} from "@angular/core"; --OnInit is an interface which is used for form assignment in angular js (in used file             "modeldriven.component.ts")
+     3. import {FormsModule,ReactiveFormsModule} from '@angular/forms'; FormsModule for form assignment/task pick from html and                           ReactiveFormsModule for from assignment/task pick from .ts file (used file in app.component.ts)
+     4. imports: [FormsModule,ReactiveFormsModule] used file in app.component.ts
+     5. in modeldriven.component.ts
+               export class ModelDrivenComponent implements OnInit{
+    stuRegForm : FormGroup;
+    ngOnInit(){
+        this.stuRegForm = new FormGroup({
 
+            firstName : new FormControl(),
+            lastName : new FormControl(),
+            email : new FormControl(),
+            Address : new FormControl()
+        })
+      } 
+    }
+    6. modeldrivev.component.html
+        <form [formGroup]="stuRegForm">
+            <label>Name</label>
+            <input type="text" formControlName= "firstName"/>
+            <label>Last Name</label>
+            <input type="text" formControlName= "lastName"/>
+            <label>Email</label>
+            <input type="text" formControlName= "email"/>
+            <label>Address</label>
+            <input type="text" formControlName= "Address"/>
+        <button class="btn btn-primary">Save </button>
+    </form>
+        {{stuRegForm.value | json}}
+
+61. What are differences between template driven form and model driven form?
+Ans: 
+     
 60. What is Component Interaction?
 Ans: To transfer data parent component to child component and child component to parent component.
 
@@ -362,8 +395,7 @@ Ans: When we send data from parent component to child component we need tu use @
      step 2: bind the above value to template: `<product [parentData]="name"></product>`
      step 3: @Input() public parentData; declare within class
      step 4: {{parentData}} bind into the child template
-  
-     
+      
 62. What is @Output or custom event? How do you build this?
 Ans: When we send data from child component to parent component we need tu use @Uutput decorator.
 
@@ -406,8 +438,7 @@ Ans: Search(value){
 
 70. What is Lambda (=>)?
 Ans: Lambda is just like argument to store the array values.
-  
-  
+   
 71. What is pipe?
 Ans: Pipe is the process to show your data in different transformations.
 
