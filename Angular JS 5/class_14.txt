@@ -1,4 +1,4 @@
-modal driven form (ts)
+model driven form (ts)
 1. ReactiveFormModule - angular form
 2. FormsGroup -  angular form
 3. FormControl - form directory
