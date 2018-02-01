@@ -24,11 +24,12 @@ TABLE OF CONTENTS
     6. *ngFor="let player of players;even as e" binding with even list true {{e}} {{player}} --- even player list true/other false
 15. @Input/@Output - Component Interaction, Data Send Parent to Child and Child to Parent
 16. Array
-17. Filer, Product, Child View
-18. Pipes, Custom Pipes
+17. Filer, Product, [HOLD: Child View] 
+18. Pipes
+19. Custom Pipes [HOLD: Child View]
 19. Template Driven Form
 20. Model Driven Form
-21. 
+21. Form Validation
 
 
 Reference
