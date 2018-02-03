@@ -1,0 +1,13 @@
+validations
+1. dirty and prestine
+2. touch and ontouch
+3. valid and invalid
+4. errors
+
+
+Q. Is typescript supports "method oveloading"?
+
+Q. what is difference between touch and dirty?
+
+
+read: promise object??
