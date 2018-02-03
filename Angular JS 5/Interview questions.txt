@@ -379,50 +379,98 @@ Ans: Steps
             <input type="text" formControlName= "email"/>
             <label>Address</label>
             <input type="text" formControlName= "Address"/>
-        <button class="btn btn-primary">Save </button>
+        <button class="btn btn-primary">Save </button>imports: FormsModule                               
     </form>
         {{stuRegForm.value | json}}
 
 61. What are differences between template driven form and model driven form?
 Ans: 
+     template driven form                                   model driven form
+     ----------------------------                           --------------------------------
+     1. import { FormsModule } from '@angular/forms';       1. import { ReactiveFormsModule } from '@angular/forms';
+          in app.component.ts                                    in app.component.ts
+     2. imports: FormsModule                                2. imports: ReactiveFormsModule
+     3. send data from component/class to view              3. send data from component to view and vice-versa
+          i.e. one way data binding                              i.e. two way data binding
+     4. this is written in html                             4. this is performs in typescript
+
+62. What is ngForm?
+Ans: It is an angular directive which directs to bind the form of html, for example we can bind the form through
+     template reference variable such as #myForm="ngForm"
      
-60. What is Component Interaction?
+63. What is ngSubmit?
+Ans: (ngSubmit) is an angular directive which helps to submit the form data. <form #myForm="ngForm" 
+
+64. What is ngModel?
+Ans: ngModel is an angular directive which hepls to control/access the every form elements.
+     <input class="form-control" type="text" name="firstName" ngModel/>
+65. What is ngModelGroup?
+Ans: ngModelGroup is an angular directive which hepls to bind the multiple form elements to binding in one.
+     <div ngModelGroup="fullName">
+        <div>
+            <label>First Name: </label>
+            <input class="form-control" type="text" name="firstName" ngModel/>
+        </div>
+
+        <div>
+            <label>Last Name: </label>
+            <input class="form-control"
+            type="text" name="lastName" ngModel/>
+        </div>
+     </div>
+     
+66. What is OnInit?
+Ans: This is a module of angular which hepls to implement the ngOnInit interface
+     export class modeldrivenComponent implements OnInit {
+               ngOnInit(){
+               }
+           }
+67. What is ngOnInit?
+Ans: It is an interface which helps to define your own document properties and methods
+
+68. What is FormGroup?
+And: FormGroup is an angular module which hepls to create your own form in typescript file. And this is follows when model driven form        created.
+
+69. What is FormControl?
+Ans: FormGroup is an angular module through which we can assing/create our new form properties/elements.
+ 
+70. What is Component Interaction?
 Ans: To transfer data parent component to child component and child component to parent component.
 
-61.  What is @Input or custom property? How do you build this? And How it works?
+71.  What is @Input or custom property? How do you build this? And How it works?
 Ans: When we send data from parent component to child component we need tu use @Input decorator.
      step 1: name:string = "Manas"; in app.component.ts (parent)
      step 2: bind the above value to template: `<product [parentData]="name"></product>`
      step 3: @Input() public parentData; declare within class
      step 4: {{parentData}} bind into the child template
       
-62. What is @Output or custom event? How do you build this?
+72. What is @Output or custom event? How do you build this?
 Ans: When we send data from child component to parent component we need tu use @Uutput decorator.
 
-63. What is EventEmitter()?
+73. What is EventEmitter()?
 Ans: Through EventEmitter() we can assign/create an Event in child component which we can referred to the parent component.
 
-64. What is emit()?
+74. What is emit()?
 Ans: We can emit/raise the EventEmitter() for sending data from child to component.
 
-65. What is the difference between ngOnInit and Constructor?
+75. What is the difference between ngOnInit and Constructor?
 Ans: 
 
-66. How do you define array in Angular js 5?
+76. How do you define array in Angular js 5?
 Ans: employees:any[] = [
      {id:1,name:'Manas'},
      {id:2,name:'Ashish'},
      {id:3,name:'Ramesh'},
      ]
      
-67. How do you access the above array?
+77. How do you access the above array?
 Ans: <div *ngFor="{let employee of employees}">
           <div>Emp {{employee.id}}. {{employee.name}}</div>
      </div>
 
-68. Describe about the angular hero?
+78. Describe about the angular hero?
 
-69. How can you filter data from array? Use above arrow.
+79. How can you filter data from array? Use above arrow.
 Ans: Search(value){
      if(this.value==''){
      this.employess = [
@@ -436,13 +484,13 @@ Ans: Search(value){
      }
      }
 
-70. What is Lambda (=>)?
+80. What is Lambda (=>)?
 Ans: Lambda is just like argument to store the array values.
    
-71. What is pipe?
+81. What is pipe?
 Ans: Pipe is the process to show your data in different transformations.
 
-72. Write down the different types of pipes?
+82. Write down the different types of pipes?
 Ans: import {Component} from "@angular/core";
 
 
@@ -497,7 +545,7 @@ Ans: import {Component} from "@angular/core";
      }
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-72. What is custom pipe? Or How will you create your custom pipe?
+82. What is custom pipe? Or How will you create your custom pipe?
 Ans: test.pipe.ts
      import {Pipe,PipeTransform} from "@angular/core";
      @Pipe({
@@ -506,3 +554,32 @@ Ans: test.pipe.ts
      export class TestPipe implements PipeTransform
      {
      }
+
+83. Which component is used to import for validation is angular?
+Ans: import { Validators } from '@angular/forms';
+
+84. What are the different validation properties?
+Ans: dirty and pristine, touched and untouched, valid and invalid and errors
+
+85. What is meant for dirty validation?
+Ans: dirty show true if the form property value is not changed when page loading
+
+86. What is meant for pristine validation?
+Ans: pristine show true if the form property value changed
+
+86. What is meant for touch validation?
+Ans: touch show true if you are blurOut from the current form element
+
+87. What is meant for untouch validation?
+Ans: untouch show true if you are focusIn in the current form element
+
+88. What is meant for valid validation?
+Ans: valid show true if you have putted valid property
+
+89. What is meant for invalid validation?
+Ans: invalid show true if you don't have putted valid property
+
+89. What is meant for errors validation?
+
+
+https://toddmotto.com/angular/
