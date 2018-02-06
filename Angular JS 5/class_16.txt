@@ -1,0 +1,17 @@
+web api/web services
+
+1. SOAP - Simple Object Access Protocol (XML/JSON)
+2. REST -  (XML/JSON) default
+
+
+
+
+
+What is http patch method?
+
+tool install - postman
+
+
+webAPI.com
+
+
