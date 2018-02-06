@@ -1,11 +1,9 @@
 web api/web services
+ref: http://www.c-sharpcorner.com/UploadFile/8a67c0/getting-started-with-web-api-step-by-step-with-sample-applic/
+
 
 1. SOAP - Simple Object Access Protocol (XML/JSON)
-2. REST -  (XML/JSON) default
-
-
-
-
+2. REST - Representational State Transfer (XML/JSON) default
 
 What is http patch method?
 
