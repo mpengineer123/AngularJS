@@ -1,0 +1,39 @@
+router 
+
+routerModule
+write rout
+mapping
+outlet
+id send pass
+ts navigator
+router navigate
+
+
+app.module.ts
+import from {Router,RouterModule} from '@angular/core';
+
+const myRoutes = [
+		{path:'student',component:StudentComponent},
+		{path:'students',component:TestComponent},
+		{path:'',component:PlayerComponent},   //default page
+		{path:'*',component:PlayerComponent}   //not exist page
+
+];
+
+
+Note: use routerLink agianst href in html
+
+
+app.component.html (in html)
+<router-outlet></router-outlet>
+
+
+
+read: session, indexedDB
+
+task: student, teacher component. Routing it!!
+
+
+
+what is const?
+
