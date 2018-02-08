@@ -1,0 +1,9 @@
+What is query srting(?)?
+putting ? mark in url to PASS the value 
+
+How you will retrive multiple values from url/router?
+
+How you will send id/multiple string through navigate?
+
+What are providers?
+
